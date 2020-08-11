@@ -17,7 +17,11 @@ class MainViewModel(private val serviceUtil: ServiceUtil) : ViewModel() {
     val characterLoadError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
-    fun getCharacters() {
+    fun refresh() {
+        getCharacters()
+    }
+
+    private fun getCharacters() {
         loading.value = true
 
         disposable.add(
