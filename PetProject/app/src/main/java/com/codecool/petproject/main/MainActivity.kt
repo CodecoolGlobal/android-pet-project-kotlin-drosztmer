@@ -1,7 +1,8 @@
-package com.codecool.petproject
+package com.codecool.petproject.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.codecool.petproject.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
