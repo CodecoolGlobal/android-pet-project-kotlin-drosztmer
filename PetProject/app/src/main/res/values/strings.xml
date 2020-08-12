@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Pet Project</string>
     <string name="error_message">An error occurred while loading data.</string>
+    <string name="details_name">Name</string>
+    <string name="details_species">Species</string>
+    <string name="detail_gender">Gender</string>
+    <string name="detail_height">Height:</string>
 </resources>

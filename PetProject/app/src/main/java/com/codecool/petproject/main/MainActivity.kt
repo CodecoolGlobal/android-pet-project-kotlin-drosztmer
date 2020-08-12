@@ -1,10 +1,10 @@
 package com.codecool.petproject.main
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codecool.petproject.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -59,5 +59,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
     }
 }

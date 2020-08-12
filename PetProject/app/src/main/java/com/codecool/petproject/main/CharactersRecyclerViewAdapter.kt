@@ -54,4 +54,6 @@ class CharactersRecyclerViewAdapter(var characters: ArrayList<Character>): Recyc
         }
     }
 
+
+
 }
