@@ -1,10 +1,13 @@
 package com.codecool.petproject.main
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.codecool.petproject.R
+import com.codecool.petproject.details.DetailsActivity
 import com.codecool.petproject.model.Character
 import com.codecool.petproject.util.getProgressDrawable
 import com.codecool.petproject.util.loadImage
@@ -42,6 +45,12 @@ class CharactersRecyclerViewAdapter(var characters: ArrayList<Character>): Recyc
             imageView.loadImage(character.image, progressDrawable)
             characterName.text = character.name
             character_species.text = character.species
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, DetailsActivity::class.java)
+                intent.putExtra("character", character)
+                itemView.context.startActivity(intent)
+            }
         }
     }
 
