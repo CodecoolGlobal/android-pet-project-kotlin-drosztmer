@@ -14,5 +14,5 @@ data class Character (
     @SerializedName("gender")
     val gender: String?,
     @SerializedName("height")
-    val height: Int?
+    val height: Double?
 )
