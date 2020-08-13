@@ -8,5 +8,6 @@
     <color name="star_color_3">#ffc100</color>
     <color name="star_color_4">#ff3800</color>
     <color name="star_background">#212121</color>
-    <color name="color_transparent">#30FFFFFF</color>
+    <color name="color_transparent">#50FFFFFF</color>
+    <color name="star_wars_yellow">#FFE81F</color>
 </resources>
