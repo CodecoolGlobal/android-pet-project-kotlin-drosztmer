@@ -1,19 +1,18 @@
 package com.codecool.petproject.main
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.codecool.petproject.R
+import com.codecool.petproject.databinding.ListItemBinding
 import com.codecool.petproject.details.DetailsActivity
 import com.codecool.petproject.model.Character
 import com.codecool.petproject.util.getProgressDrawable
 import com.codecool.petproject.util.loadImage
-import kotlinx.android.synthetic.main.list_item.view.*
 
 class CharactersRecyclerViewAdapter(var characters: ArrayList<Character>): RecyclerView.Adapter<CharactersRecyclerViewAdapter.CharacterViewHolder>() {
+
+    private lateinit var listItemBinding: ListItemBinding
 
     fun updateCharacters(newCharacters: List<Character>) {
         characters.clear()
@@ -22,7 +21,9 @@ class CharactersRecyclerViewAdapter(var characters: ArrayList<Character>): Recyc
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersRecyclerViewAdapter.CharacterViewHolder {
-        return CharacterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
+        listItemBinding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CharacterViewHolder(listItemBinding)
+//        return CharacterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -33,18 +34,18 @@ class CharactersRecyclerViewAdapter(var characters: ArrayList<Character>): Recyc
         holder.bind(characters[position])
     }
 
-    class CharacterViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class CharacterViewHolder(view: ListItemBinding): RecyclerView.ViewHolder(view.root) {
 
-        private val imageView = view.character_image
-        private val characterName = view.character_name
-        private val character_species = view.character_species
+        private val imageView = view.characterImage
+        private val characterName = view.characterName
+        private val characterSpecies = view.characterSpecies
 
-        private var progressDrawable = getProgressDrawable(view.context)
+        private var progressDrawable = getProgressDrawable(view.root.context)
 
         fun bind(character: Character) {
             imageView.loadImage(character.image, progressDrawable)
             characterName.text = character.name
-            character_species.text = character.species?.capitalize()
+            characterSpecies.text = character.species?.capitalize()
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailsActivity::class.java)
