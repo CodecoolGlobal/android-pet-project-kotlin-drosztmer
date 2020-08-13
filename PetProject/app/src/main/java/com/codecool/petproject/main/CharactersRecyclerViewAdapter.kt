@@ -44,7 +44,7 @@ class CharactersRecyclerViewAdapter(var characters: ArrayList<Character>): Recyc
         fun bind(character: Character) {
             imageView.loadImage(character.image, progressDrawable)
             characterName.text = character.name
-            character_species.text = character.species
+            character_species.text = character.species?.capitalize()
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailsActivity::class.java)

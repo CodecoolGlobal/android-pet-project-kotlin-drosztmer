@@ -6,7 +6,7 @@
     android:layout_gravity="center_vertical"
     android:layout_marginHorizontal="@dimen/margin"
     android:layout_marginTop="@dimen/margin"
-    app:cardBackgroundColor="@android:color/transparent"
+    app:cardBackgroundColor="@color/color_transparent"
     app:cardCornerRadius="@dimen/card_corner">
 
     <LinearLayout

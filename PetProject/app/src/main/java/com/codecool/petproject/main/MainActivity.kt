@@ -61,8 +61,13 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
+    override fun onStart() {
+        super.onStart()
+        stars.onStart()
+    }
 
+    override fun onStop() {
+        super.onStop()
+        stars.onStop()
     }
 }

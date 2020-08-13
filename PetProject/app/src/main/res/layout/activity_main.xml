@@ -5,12 +5,25 @@
     android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/star_background"
     tools:context=".main.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <com.sofakingforever.stars.AnimatedStarsView
+            android:id="@+id/stars"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:starsView_bigStarThreshold="10dp"
+            app:starsView_meteoritesColors="@array/meteorites_colors"
+            app:starsView_meteoritesEnabled="true"
+            app:starsView_meteoritesInterval="2000"
+            app:starsView_maxStarSize="16dp"
+            app:starsView_minStarSize="1dp"
+            app:starsView_starColors="@array/star_colors"
+            app:starsView_starCount="50" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/characters_list"
@@ -40,6 +53,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

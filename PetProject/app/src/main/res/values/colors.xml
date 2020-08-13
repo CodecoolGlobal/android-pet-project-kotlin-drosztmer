@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="star_color_1">#ffffff</color>
+    <color name="star_color_2">#25adff</color>
+    <color name="star_color_3">#ffc100</color>
+    <color name="star_color_4">#ff3800</color>
+    <color name="star_background">#212121</color>
+    <color name="color_transparent">#30FFFFFF</color>
 </resources>
