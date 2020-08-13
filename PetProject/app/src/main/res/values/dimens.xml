@@ -6,4 +6,5 @@
     <dimen name="details_card_corner_radius">24dp</dimen>
     <dimen name="detail_image_height">300dp</dimen>
     <dimen name="detail_margintop">16dp</dimen>
+    <dimen name="detail_image_margintop">16dp</dimen>
 </resources>

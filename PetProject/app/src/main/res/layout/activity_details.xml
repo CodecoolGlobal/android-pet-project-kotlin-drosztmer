@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".details.DetailsActivity">
 
     <androidx.cardview.widget.CardView
@@ -11,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin"
         android:layout_marginVertical="@dimen/margin"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="@android:color/transparent"
         app:cardCornerRadius="@dimen/details_card_corner_radius"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +28,7 @@
                 android:id="@+id/details_image"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/detail_image_height"
+                android:layout_marginTop="@dimen/detail_image_margintop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
