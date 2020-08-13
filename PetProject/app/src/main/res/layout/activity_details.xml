@@ -12,135 +12,146 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:starsView_bigStarThreshold="10dp"
+        app:starsView_maxStarSize="16dp"
         app:starsView_meteoritesColors="@array/meteorites_colors"
         app:starsView_meteoritesEnabled="true"
         app:starsView_meteoritesInterval="2000"
-        app:starsView_maxStarSize="16dp"
         app:starsView_minStarSize="1dp"
         app:starsView_starColors="@array/star_colors"
         app:starsView_starCount="50" />
 
-    <androidx.cardview.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/margin"
-        android:layout_marginVertical="@dimen/margin"
-        app:cardBackgroundColor="@color/color_transparent"
-        app:cardCornerRadius="@dimen/details_card_corner_radius"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/padding">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin"
+            android:layout_marginVertical="@dimen/margin"
+            app:cardBackgroundColor="@color/color_transparent"
+            app:cardCornerRadius="@dimen/details_card_corner_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/details_image"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/detail_image_height"
-                android:layout_marginTop="@dimen/detail_image_margintop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/detail_name"
-                style="@style/Title"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/detail_margintop"
-                android:text="@string/details_name"
-                app:layout_constraintStart_toStartOf="@+id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@+id/details_image" />
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="24dp">
 
-            <TextView
-                android:id="@+id/current_name"
-                style="@style/Title"
-                android:layout_width="136dp"
-                android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:ellipsize="end"
-                app:layout_constraintStart_toStartOf="@+id/guideline_right"
-                app:layout_constraintTop_toTopOf="@+id/detail_name" />
 
-            <TextView
-                android:id="@+id/detail_species"
-                style="@style/Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/detail_margintop"
-                android:text="@string/details_species"
-                app:layout_constraintStart_toStartOf="@+id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@+id/detail_name"
-                tools:layout_editor_absoluteX="8dp" />
+                <ImageView
+                    android:id="@+id/details_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/detail_image_height"
+                    android:layout_marginTop="@dimen/detail_image_margintop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/current_species"
-                style="@style/Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/guideline_right"
-                app:layout_constraintTop_toTopOf="@+id/detail_species" />
+                <TextView
+                    android:id="@+id/detail_name"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/detail_margintop"
+                    android:text="@string/details_name"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintTop_toBottomOf="@+id/details_image" />
 
-            <TextView
-                android:id="@+id/detail_gender"
-                style="@style/Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/detail_margintop"
-                android:text="@string/detail_gender"
-                app:layout_constraintStart_toStartOf="@+id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@+id/detail_species"
-                tools:layout_editor_absoluteX="8dp" />
+                <TextView
+                    android:id="@+id/current_name"
+                    style="@style/Title"
+                    android:layout_width="136dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toTopOf="@+id/detail_name" />
 
-            <TextView
-                android:id="@+id/current_gender"
-                style="@style/Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/guideline_right"
-                app:layout_constraintTop_toTopOf="@+id/detail_gender" />
+                <TextView
+                    android:id="@+id/detail_species"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/detail_margintop"
+                    android:text="@string/details_species"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_name"
+                    tools:layout_editor_absoluteX="8dp" />
 
-            <TextView
-                android:id="@+id/detail_height"
-                style="@style/Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/detail_margintop"
-                android:text="@string/detail_height"
-                app:layout_constraintStart_toStartOf="@+id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@+id/detail_gender"
-                tools:layout_editor_absoluteX="8dp" />
+                <TextView
+                    android:id="@+id/current_species"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toTopOf="@+id/detail_species" />
 
-            <TextView
-                android:id="@+id/current_height"
-                style="@style/Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/guideline_right"
-                app:layout_constraintTop_toTopOf="@+id/detail_height" />
+                <TextView
+                    android:id="@+id/detail_gender"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/detail_margintop"
+                    android:text="@string/detail_gender"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_species"
+                    tools:layout_editor_absoluteX="8dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="60dp" />
+                <TextView
+                    android:id="@+id/current_gender"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toTopOf="@+id/detail_gender" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="160dp" />
+                <TextView
+                    android:id="@+id/detail_height"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/detail_margintop"
+                    android:text="@string/detail_height"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_gender"
+                    tools:layout_editor_absoluteX="8dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/current_height"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                    app:layout_constraintTop_toTopOf="@+id/detail_height" />
 
-    </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="60dp" />
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="160dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
