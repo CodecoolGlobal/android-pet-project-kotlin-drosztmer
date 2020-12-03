@@ -1,4 +1,4 @@
-# Android Pet Project
+# Star Wars Pet Project
 
 ## Story
 
